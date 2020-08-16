@@ -1,5 +1,4 @@
-const { Route, util: { encrypt }, constants: { RESPONSES } } = require('klasa-dashboard-hooks');
-const { inspect } = require('util');
+const { Route, util: { encrypt } } = require('klasa-dashboard-hooks');
 const fetch = require('node-fetch');
 
 module.exports = class extends Route {
@@ -33,16 +32,6 @@ module.exports = class extends Route {
 		}
 
 		return response.end(JSON.stringify(dashboardUser));
-	}
-
-	async post(request, response) {
-		const botUser = await this.client.users.fetch(request.body.id);
-		const updated = await botUser.settings.update(request.body.data, { action: 'overwrite' });
-		const errored = Boolean(updated.errors.length);
-
-		if (errored) this.client.emit('error', `${botUser.username}[${botUser.id}] failed updating user configs via dashboard with error:\n${inspect(updated.errors)}`);
-
-		return response.end(RESPONSES.UPDATED[Number(!errored)]);
 	}
 
 };
