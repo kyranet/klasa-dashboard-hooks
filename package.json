@@ -20,7 +20,6 @@
     "docs": "npx dg --source src --custom guides/.docconfig.json --output dist/docs.json --logging"
   },
   "dependencies": {
-    "@discordjs/collection": "^0.1.6",
     "node-fetch": "^2.6.0"
   },
   "peerDependencies": {

@@ -5,8 +5,7 @@ declare module 'klasa-dashboard-hooks' {
 	import { ServerOptions as HS1ServerOptions } from 'https';
 	import { Http2SecureServer, SecureServerOptions as H2SecureServerOptions } from 'http2';
     import { Server as HttpSecureServer } from 'tls';
-    import { Collection } from '@discordjs/collection';
-	import { Permissions, User } from 'discord.js';
+	import { Collection, Permissions, User } from 'discord.js';
 
 //#region Classes
 

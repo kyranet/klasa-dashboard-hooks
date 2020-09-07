@@ -1,5 +1,5 @@
 const { Client, util: { mergeDefault } } = require('klasa');
-const { Collection } = require('@discordjs/collection');
+const { Collection } = require('discord.js');
 const path = require('path');
 
 const Server = require('./http/Server');
