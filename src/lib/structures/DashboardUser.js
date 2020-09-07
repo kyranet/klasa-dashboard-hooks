@@ -102,7 +102,7 @@ class DashboardUser {
 	 * @readonly
 	 */
 	get user() {
-		return this.client.users.get(this.id) || null;
+		return this.client.users.cache.get(this.id) || null;
 	}
 
 	/**
@@ -120,7 +120,7 @@ class DashboardUser {
 			locale: this.locale,
 			mfaEnabled: this.mfaEnabled,
 			avatarURL: this.avatarURL,
-			guilds: [...this.guilds.values()]
+			guilds: [...this.guilds.cache.values()]
 		};
 	}
 
